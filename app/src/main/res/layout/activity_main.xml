@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="clickActionClear"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:ems="10"
+        android:id="@+id/input1"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/gray"
+        android:inputType="numberDecimal"
+        android:text=""
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/action" />
+
+    <TextView
+        android:id="@+id/action"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text=" "
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/input2" />
+
+    <EditText
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/input2"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/gray"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text=""
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/result" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="= "
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_rowSpan="2"
+            android:layout_column="0"
+            android:layout_columnWeight="0"
+            android:layout_gravity="fill"
+            android:onClick="clickActionPlus"
+            android:text="+" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button"
+            android:layout_column="1"
+            android:layout_columnWeight="2"
+            android:layout_gravity="fill"
+            android:onClick="clickActionMinus"
+            android:text="-" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button"
+            android:layout_column="2"
+            android:layout_columnWeight="3"
+            android:layout_gravity="fill"
+            android:onClick="clickActionDiv"
+            android:text="/" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:onClick="clickActionMul"
+            android:text="*" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button"
+            android:layout_columnSpan="3"
+            android:layout_gravity="fill"
+            android:onClick="clickActionClear"
+            android:text="C" />
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
